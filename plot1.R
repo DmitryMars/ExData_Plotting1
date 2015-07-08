@@ -8,3 +8,9 @@ data <- data[data$Date >= "2007-02-01" & data$Date <= "2007-02-02",]
 data$Time <- as.Date(data$Time, format = "%H:%M:%S")
 
 # --------------------------------------------
+hist(data$Global_active_power, xlab = "Global Active Power (kilowatts)", 
+     col = "red", 
+     main = "Global Active Power")
+# export to png
+dev.copy(png, 'plot1.png', width = 504, height = 504)
+dev.off()
